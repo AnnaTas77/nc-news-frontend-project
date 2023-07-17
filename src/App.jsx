@@ -1,10 +1,17 @@
-import { useState } from "react";
-import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import Header from "./components/Header";
+import NavBar from "./components/NavBar";
+import ArticlesList from "./components/ArticlesList";
 
 function App() {
-    // const [count, setCount] = useState(0);
-
-    return <div></div>;
+    return (
+        <div className="app-container">
+            <NavBar />
+            <Routes>
+                <Route path="/articles" element={<ArticlesList />} />
+            </Routes>
+        </div>
+    );
 }
 
 export default App;
