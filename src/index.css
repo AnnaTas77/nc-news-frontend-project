@@ -24,7 +24,7 @@ h1 {
     justify-content: center;
     color: #2b052aeb;
     width: 100%;
-    font-size: 18px;
+    font-size: 1.5rem;
     margin-left: 15px;
 }
 
@@ -61,10 +61,19 @@ h1 {
 
 /* ARTICLES  */
 
+.article-list-loading {
+    font-weight: bold;
+    font-size: 1.2rem;
+    height: 100vh;
+    margin-top: 15%;
+    background-color: none;
+}
+
 .articles-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 30px;
 }
 
 .articles-list {
@@ -74,6 +83,8 @@ h1 {
     justify-content: center;
     list-style-type: none;
     margin: 10px 0 50px 0;
+    padding: 0;
+    width: 90%;
 }
 
 .article-card {
@@ -86,10 +97,60 @@ h1 {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
-.articles-list img {
-    width: 200px;
+.article-card:hover {
+    background-color: #b3b7fd75;
 }
 
-.article-list-item span {
+.topic {
+    text-transform: capitalize;
+}
+
+.article-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-image {
+    max-width: 500px;
+    align-self: center;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.article-title {
+    max-width: 500px;
+    line-height: 1.5rem;
+    margin-bottom: 7px;
+    overflow-y: auto;
+    min-height: 50px;
+}
+
+.article-body div {
+    line-height: 0.7rem;
+}
+
+.article-body p {
+    font-size: 0.8rem;
+    line-height: 1.5rem;
+    margin: 0;
+}
+
+.article-body span {
     font-weight: bold;
+}
+
+.article-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.article-footer span {
+    font-weight: bold;
+}
+
+.article-footer span {
+    font-weight: bold;
+}
+.votes {
+    margin-left: 15px;
 }
