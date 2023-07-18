@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleById } from "../utils/utils";
+import CommentsList from "./CommentsList";
 
 function SingleArticle() {
     const { article_id } = useParams();
@@ -55,6 +56,7 @@ function SingleArticle() {
                     </p>
                 </div>
             </div>
+            <CommentsList articleId={article_id} />
         </article>
     );
 }
