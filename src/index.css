@@ -183,6 +183,7 @@ h1 {
 
 .single-article h2 {
     text-align: center;
+    margin: 40px 0 20px;
 }
 
 .article-topic {
@@ -199,7 +200,6 @@ h1 {
 }
 
 .article-author-date {
-    margin-top: 0;
     font-size: 0.8rem;
     font-style: italic;
     text-align: center;
@@ -218,6 +218,7 @@ h1 {
 .single-article img {
     border-radius: 8px;
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    margin: 35px 0 23px 0;
 }
 
 .comments-votes-container {
@@ -270,4 +271,11 @@ h1 {
 .comment-votes {
     margin: 0;
     font-size: 0.8rem;
+}
+
+.no-comments-msg {
+    font-weight: bold;
+    font-size: 1rem;
+    height: 50vh;
+    text-align: center;
 }
