@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { getAllArticles } from "../utils/utils";
+import { Link } from "react-router-dom";
 
 function ArticlesList() {
     const [articles, setArticles] = useState([]);
@@ -34,32 +35,34 @@ function ArticlesList() {
 
                     return (
                         <li key={article.article_id} className="article-card">
-                            <div className="article-header">
-                                <h4 className="topic">{article.topic}</h4>
-                            </div>
+                            <Link to={`/articles/${article.article_id}`}>
+                                <div className="article-header">
+                                    <h4 className="topic">{article.topic}</h4>
+                                </div>
 
-                            <div className="article-body">
-                                <img
-                                    className="article-image"
-                                    src={article.article_img_url}
-                                    alt={`An image related to the topic of ${article.topic}`}
-                                />
-                                <div>
-                                    <h4 className="article-title">{article.title}</h4>
+                                <div className="article-body">
+                                    <img
+                                        className="article-image"
+                                        src={article.article_img_url}
+                                        alt={`An image related to the topic of ${article.topic}`}
+                                    />
+                                    <div>
+                                        <h4 className="article-title">{article.title}</h4>
+                                        <p>
+                                            Posted by <span>{article.author}</span> on <span>{formattedDate}</span>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div className="article-footer">
                                     <p>
-                                        Posted by <span>{article.author}</span> on <span>{formattedDate}</span>
+                                        <span> {article.comment_count}</span> Comments
+                                    </p>
+                                    <p className="votes">
+                                        <span>{article.votes}</span> Votes
                                     </p>
                                 </div>
-                            </div>
-
-                            <div className="article-footer">
-                                <p>
-                                    <span> {article.comment_count}</span> Comments
-                                </p>
-                                <p className="votes">
-                                    <span>{article.votes}</span> Votes
-                                </p>
-                            </div>
+                            </Link>
                         </li>
                     );
                 })}

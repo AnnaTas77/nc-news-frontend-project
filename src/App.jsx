@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
-import Header from "./components/Header";
 import NavBar from "./components/NavBar";
 import ArticlesList from "./components/ArticlesList";
+import SingleArticle from "./components/SingleArticle";
 
 function App() {
     return (
@@ -9,6 +9,7 @@ function App() {
             <NavBar />
             <Routes>
                 <Route path="/articles" element={<ArticlesList />} />
+                <Route path={"/articles/:article_id"} element={<SingleArticle />} />
             </Routes>
         </div>
     );

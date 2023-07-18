@@ -101,6 +101,11 @@ h1 {
     background-color: #b3b7fd75;
 }
 
+.article-card a {
+    text-decoration: inherit;
+    color: inherit;
+}
+
 .topic {
     text-transform: capitalize;
 }
@@ -151,6 +156,78 @@ h1 {
 .article-footer span {
     font-weight: bold;
 }
+.votes {
+    margin-left: 15px;
+}
+
+/* SINGLE ARTICLE */
+
+.single-article-loading {
+    font-weight: bold;
+    font-size: 1.2rem;
+    height: 100vh;
+    margin-top: 15%;
+    background-color: none;
+}
+
+.article-container {
+    width: 80%;
+}
+
+.single-article {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.single-article h2 {
+    text-align: center;
+}
+
+.article-topic {
+    text-transform: capitalize;
+    font-style: italic;
+    font-size: 0.78rem;
+    margin-top: 0;
+    text-align: center;
+}
+
+.article-topic span {
+    font-style: normal;
+    font-weight: bold;
+}
+
+.article-author-date {
+    margin-top: 0;
+    font-size: 0.8rem;
+    font-style: italic;
+    text-align: center;
+}
+
+.article-author-date span {
+    font-weight: 550;
+    font-style: normal;
+}
+
+.article-text {
+    line-height: 1.5rem;
+    margin-top: 25px;
+}
+
+.single-article img {
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.comments-votes-container {
+    display: flex;
+    font-weight: bold;
+}
+
+.comments-votes-container span {
+    font-weight: normal;
+}
+
 .votes {
     margin-left: 15px;
 }
