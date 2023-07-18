@@ -172,6 +172,7 @@ h1 {
 
 .article-container {
     width: 80%;
+    margin-bottom: 50px;
 }
 
 .single-article {
@@ -230,4 +231,43 @@ h1 {
 
 .votes {
     margin-left: 15px;
+}
+
+/* COMMENTS */
+
+.comments-list-loading {
+    font-weight: bold;
+    font-size: 1rem;
+    height: 50vh;
+    background-color: none;
+    text-align: center;
+}
+
+.single-comment-card {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid #0000003d;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 0.9rem;
+}
+
+.single-comment-card span {
+    font-weight: bold;
+}
+
+.comment-author-date {
+    font-size: 0.8rem;
+    margin-bottom: 0;
+}
+
+.comment-text {
+    line-height: 1.4rem;
+}
+
+.comment-votes {
+    margin: 0;
+    font-size: 0.8rem;
 }
