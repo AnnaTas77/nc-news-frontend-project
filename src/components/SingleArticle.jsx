@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { getArticleById } from "../utils/utils";
+import { getArticleById, patchCommentByArticleId } from "../utils/utils";
 import CommentsList from "./CommentsList";
 
 function SingleArticle() {
     const { article_id } = useParams();
     const [article, setArticle] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+
+    const [userVotes, setUserVotes] = useState(0);
+    const [isError, setIsError] = useState(false);
+    const [hasVoted, setHasVoted] = useState(false);
 
     const dateString = article.created_at;
     const date = new Date(dateString);
@@ -30,6 +34,38 @@ function SingleArticle() {
             });
     }, [article_id]);
 
+    const handleVoteClick = (voteValue) => {
+        if (!hasVoted) {
+            if (voteValue === 1) {
+                setUserVotes((currentVotes) => {
+                    return currentVotes + 1;
+                });
+                setHasVoted(true);
+            } else {
+                setUserVotes((currentVotes) => {
+                    return currentVotes - 1;
+                });
+                setHasVoted(true);
+            }
+
+            patchCommentByArticleId(article_id, voteValue).catch((err) => {
+                console.log(err);
+
+                if (voteValue === 1) {
+                    setUserVotes((currentVotes) => {
+                        return currentVotes - 1;
+                    });
+                } else {
+                    setUserVotes((currentVotes) => {
+                        return currentVotes + 1;
+                    });
+                }
+
+                setIsError(true);
+            });
+        }
+    };
+
     return isLoading ? (
         <p className="single-article-loading">Loading...</p>
     ) : (
@@ -47,13 +83,35 @@ function SingleArticle() {
 
                 <p className="article-text">{article.body}</p>
 
+                <div className="vote-buttons-container">
+                    <button
+                        className="like-btn"
+                        onClick={() => {
+                            handleVoteClick(1);
+                        }}
+                        disabled={hasVoted}
+                    >
+                        Like
+                    </button>
+                    <button
+                        className="dislike-btn"
+                        onClick={() => {
+                            handleVoteClick(-1);
+                        }}
+                        disabled={hasVoted}
+                    >
+                        Dislike
+                    </button>
+                </div>
+
+                {isError ? <p className="vote-error-msg">Something went wrong. Please try again later.</p> : null}
+
                 <div className="comments-votes-container">
                     <p>
                         {article.comment_count} <span>Comments</span>
                     </p>
-                    <p className="votes">
-                        {article.votes} <span>Votes</span>
-                    </p>
+
+                    <p className="votes">{article.votes + userVotes} Votes</p>
                 </div>
             </div>
             <CommentsList articleId={article_id} />
