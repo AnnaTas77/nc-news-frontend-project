@@ -343,6 +343,14 @@ h1 {
 .comment-adder-form label {
     font-weight: bold;
     padding: 15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chars-left {
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 0.85rem;
 }
 
 .comment-adder-form {
@@ -371,4 +379,18 @@ textarea {
 
 .add-button-container button:hover {
     background-color: #62ce82;
+}
+
+.new-comment-error-msg {
+    font-weight: bold;
+    font-size: 1rem;
+    align-self: center;
+    color: #c40707;
+}
+
+.add-comment-btn:disabled {
+    border: none;
+    filter: brightness(1) saturate(0%);
+    pointer-events: none;
+    border: 1px solid #0000003d;
 }
