@@ -324,4 +324,51 @@ h1 {
     font-size: 1rem;
     height: 50vh;
     text-align: center;
+    margin-top: 50px;
+}
+
+/* FORM */
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid #0000003d;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 0.9rem;
+}
+
+.comment-adder-form label {
+    font-weight: bold;
+    padding: 15px 0 15px;
+}
+
+.comment-adder-form {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    border-radius: 5px;
+    border: 1px solid #0000003d;
+}
+
+.add-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.add-button-container button {
+    padding: 10px;
+    font-weight: bold;
+    background-color: #a0ecba;
+    border-radius: 8px;
+    border: 1px solid #62ce82;
+    margin-top: 10px;
+}
+
+.add-button-container button:hover {
+    background-color: #62ce82;
 }
