@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArticleById, patchCommentByArticleId } from "../utils/utils";
 import CommentsList from "./CommentsList";
+import ThumbUp from "../assets/thumb-up.png";
+import ThumbDown from "../assets/thumb-down.png";
 
 function SingleArticle() {
     const { article_id } = useParams();
@@ -91,7 +93,7 @@ function SingleArticle() {
                         }}
                         disabled={hasVoted}
                     >
-                        Like
+                        <img src={ThumbUp} alt="thumb up" />
                     </button>
                     <button
                         className="dislike-btn"
@@ -100,7 +102,7 @@ function SingleArticle() {
                         }}
                         disabled={hasVoted}
                     >
-                        Dislike
+                        <img src={ThumbDown} alt="thumb down" />
                     </button>
                 </div>
 
