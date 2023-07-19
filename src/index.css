@@ -156,9 +156,6 @@ h1 {
 .article-footer span {
     font-weight: bold;
 }
-.votes {
-    margin-left: 15px;
-}
 
 /* SINGLE ARTICLE */
 
@@ -224,6 +221,7 @@ h1 {
 .comments-votes-container {
     display: flex;
     font-weight: bold;
+    align-items: center;
 }
 
 .comments-votes-container span {
@@ -232,6 +230,60 @@ h1 {
 
 .votes {
     margin-left: 15px;
+}
+
+.vote-buttons-container {
+    display: flex;
+    justify-content: center;
+}
+
+.like-btn {
+    margin: 15px;
+    padding: 7px;
+    background-color: #daeeff;
+    border-radius: 8px;
+    border: 1px solid #5db3ff;
+    color: #10102b;
+    font-weight: 450;
+    width: 60px;
+}
+
+.like-btn:hover {
+    background-color: #7ac1ff;
+}
+
+.like-btn:disabled {
+    background-color: #d9d9d9;
+    border: 1px solid #acacac;
+    color: #424242a3;
+}
+
+.dislike-btn {
+    margin: 15px;
+    padding: 7px;
+    background-color: #daeeff;
+    border-radius: 8px;
+    border: 1px solid #5db3ff;
+    color: #10102b;
+    font-weight: 450;
+    width: 60px;
+}
+
+.dislike-btn:hover {
+    background-color: #7ac1ff;
+}
+
+.dislike-btn:disabled {
+    background-color: #d9d9d9;
+    border: 1px solid #acacac;
+    color: #424242a3;
+}
+
+.vote-error-msg {
+    font-weight: bold;
+    font-size: 1rem;
+    align-self: center;
+    color: #c40707;
 }
 
 /* COMMENTS */

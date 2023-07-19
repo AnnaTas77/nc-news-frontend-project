@@ -6,8 +6,6 @@ function CommentsList({ articleId }) {
     const [comments, setComments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    console.log("comments: ", comments);
-
     useEffect(() => {
         getAllCommentsByArticleId(articleId)
             .then((commentsFromDB) => {

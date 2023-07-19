@@ -21,3 +21,13 @@ export const getAllCommentsByArticleId = (id) => {
         return response.data.comments;
     });
 };
+
+export const patchCommentByArticleId = (articleId, voteValue) => {
+    const patchRequestBody = {
+        inc_votes: voteValue,
+    };
+
+    return ncNewsBaseUrl.patch(`/api/articles/${articleId}`, patchRequestBody).then((response) => {
+        return response.data.updatedArticle;
+    });
+};
