@@ -1,24 +1,42 @@
 import { useEffect, useState } from "react";
-import { getAllArticles } from "../utils/utils";
-import { Link } from "react-router-dom";
+import { getAllArticles, getArticlesByTopic } from "../utils/utils";
+import { Link, useSearchParams } from "react-router-dom";
 
 function ArticlesList() {
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
+    const [searchParams, setSearchParams] = useSearchParams();
+
     useEffect(() => {
+        const topicQuery = searchParams.get("topic");
+
         setIsLoading(true);
-        getAllArticles()
-            .then((articlesFromDB) => {
-                setArticles(articlesFromDB);
-            })
-            .then(() => {
-                setIsLoading(false);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }, []);
+
+        if (topicQuery) {
+            getArticlesByTopic(topicQuery)
+                .then((articlesByTopic) => {
+                    setArticles(articlesByTopic);
+                })
+                .then(() => {
+                    setIsLoading(false);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        } else {
+            getAllArticles()
+                .then((articlesFromDB) => {
+                    setArticles(articlesFromDB);
+                })
+                .then(() => {
+                    setIsLoading(false);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
+    }, [searchParams]);
 
     return isLoading ? (
         <p className="article-list-loading">Loading...</p>
