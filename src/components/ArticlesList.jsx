@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
 import { getAllArticles, getArticlesByTopic } from "../utils/utils";
-import { Link, useSearchParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function ArticlesList() {
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
-    const [searchParams, setSearchParams] = useSearchParams();
+    const { topic } = useParams();
 
     useEffect(() => {
-        const topicQuery = searchParams.get("topic");
-
         setIsLoading(true);
 
-        if (topicQuery) {
-            getArticlesByTopic(topicQuery)
+        if (topic) {
+            getArticlesByTopic(topic)
                 .then((articlesByTopic) => {
                     setArticles(articlesByTopic);
                 })
@@ -36,7 +35,7 @@ function ArticlesList() {
                     console.log(err);
                 });
         }
-    }, [searchParams]);
+    }, [topic]);
 
     return isLoading ? (
         <p className="article-list-loading">Loading...</p>

@@ -7,9 +7,13 @@ function TopicsList() {
     const [topics, setTopics] = useState([]);
 
     useEffect(() => {
-        getAllTopics().then((topicsFromDB) => {
-            setTopics(topicsFromDB);
-        });
+        getAllTopics()
+            .then((topicsFromDB) => {
+                setTopics(topicsFromDB);
+            })
+            .catch((err) => {
+                console.log(err);
+            });
     }, []);
 
     return (
@@ -17,7 +21,7 @@ function TopicsList() {
             {topics.map((topic) => {
                 return (
                     <li key={topic.slug}>
-                        <Link to={`/articles?topic=${topic.slug}`}>
+                        <Link to={`/topics/${topic.slug}`}>
                             <div>
                                 <img className="topic-img" src={TopicIcon} alt="topic default icon" />
                             </div>
