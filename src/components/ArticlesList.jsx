@@ -1,24 +1,41 @@
 import { useEffect, useState } from "react";
-import { getAllArticles } from "../utils/utils";
+import { getAllArticles, getArticlesByTopic } from "../utils/utils";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 function ArticlesList() {
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
+    const { topic } = useParams();
+
     useEffect(() => {
         setIsLoading(true);
-        getAllArticles()
-            .then((articlesFromDB) => {
-                setArticles(articlesFromDB);
-            })
-            .then(() => {
-                setIsLoading(false);
-            })
-            .catch((err) => {
-                console.log(err);
-            });
-    }, []);
+
+        if (topic) {
+            getArticlesByTopic(topic)
+                .then((articlesByTopic) => {
+                    setArticles(articlesByTopic);
+                })
+                .then(() => {
+                    setIsLoading(false);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        } else {
+            getAllArticles()
+                .then((articlesFromDB) => {
+                    setArticles(articlesFromDB);
+                })
+                .then(() => {
+                    setIsLoading(false);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
+        }
+    }, [topic]);
 
     return isLoading ? (
         <p className="article-list-loading">Loading...</p>

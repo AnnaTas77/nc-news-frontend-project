@@ -39,3 +39,15 @@ export const postNewComment = (articleId, newComment) => {
         return response.data.postedComment;
     });
 };
+
+export const getAllTopics = () => {
+    return ncNewsBaseUrl.get("/api/topics").then((response) => {
+        return response.data.topics;
+    });
+};
+
+export const getArticlesByTopic = (topicName) => {
+    return ncNewsBaseUrl.get(`/api/articles?topic=${topicName}`).then((response) => {
+        return response.data.articles;
+    });
+};
