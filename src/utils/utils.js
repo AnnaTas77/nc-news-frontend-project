@@ -31,3 +31,11 @@ export const patchCommentByArticleId = (articleId, voteValue) => {
         return response.data.updatedArticle;
     });
 };
+
+export const postNewComment = (articleId, newComment) => {
+    const postRequestBody = { username: newComment.username, body: newComment.body };
+
+    return ncNewsBaseUrl.post(`/api/articles/${articleId}/comments`, postRequestBody).then((response) => {
+        return response.data.postedComment;
+    });
+};

@@ -235,48 +235,42 @@ h1 {
 .vote-buttons-container {
     display: flex;
     justify-content: center;
+    margin: 15px 0 15px;
 }
 
-.like-btn {
-    margin: 15px;
-    padding: 7px;
-    background-color: #daeeff;
-    border-radius: 8px;
-    border: 1px solid #5db3ff;
-    color: #10102b;
-    font-weight: 450;
-    width: 60px;
+.like-btn,
+.dislike-btn {
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    margin: 0 15px;
+    transition: all 0.2s ease-in-out;
 }
 
-.like-btn:hover {
-    background-color: #7ac1ff;
+.like-btn img,
+.dislike-btn img {
+    width: 3rem;
+    border-radius: 50%;
+    margin: 0;
+    cursor: pointer;
+}
+
+.like-btn:hover,
+.dislike-btn:hover {
+    transform: scale(1.1);
 }
 
 .like-btn:disabled {
-    background-color: #d9d9d9;
-    border: 1px solid #acacac;
-    color: #424242a3;
-}
-
-.dislike-btn {
-    margin: 15px;
-    padding: 7px;
-    background-color: #daeeff;
-    border-radius: 8px;
-    border: 1px solid #5db3ff;
-    color: #10102b;
-    font-weight: 450;
-    width: 60px;
-}
-
-.dislike-btn:hover {
-    background-color: #7ac1ff;
+    border: none;
+    filter: brightness(1) saturate(0%);
+    pointer-events: none;
 }
 
 .dislike-btn:disabled {
-    background-color: #d9d9d9;
-    border: 1px solid #acacac;
-    color: #424242a3;
+    border: none;
+    filter: brightness(1.5) saturate(0%);
+    pointer-events: none;
 }
 
 .vote-error-msg {
@@ -330,4 +324,73 @@ h1 {
     font-size: 1rem;
     height: 50vh;
     text-align: center;
+    margin-top: 50px;
+}
+
+/* FORM */
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border: 1px solid #0000003d;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    font-size: 0.9rem;
+}
+
+.comment-adder-form label {
+    font-weight: bold;
+    padding: 15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.chars-left {
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 0.85rem;
+}
+
+.comment-adder-form {
+    display: flex;
+    flex-direction: column;
+}
+
+textarea {
+    border-radius: 5px;
+    border: 1px solid #0000003d;
+}
+
+.add-button-container {
+    display: flex;
+    justify-content: center;
+}
+
+.add-button-container button {
+    padding: 10px;
+    font-weight: bold;
+    background-color: #a0ecba;
+    border-radius: 8px;
+    border: 1px solid #62ce82;
+    margin-top: 10px;
+}
+
+.add-button-container button:hover {
+    background-color: #62ce82;
+}
+
+.new-comment-error-msg {
+    font-weight: bold;
+    font-size: 1rem;
+    align-self: center;
+    color: #c40707;
+}
+
+.add-comment-btn:disabled {
+    border: none;
+    filter: brightness(1) saturate(0%);
+    pointer-events: none;
+    border: 1px solid #0000003d;
 }
