@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { getAllArticles, getArticlesByTopic } from "../utils/utils";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import SortArticles from "./SortArticles";
 
 function ArticlesList() {
     const [articles, setArticles] = useState([]);
@@ -41,6 +42,7 @@ function ArticlesList() {
         <p className="article-list-loading">Loading...</p>
     ) : (
         <main className="articles-container">
+            <SortArticles setArticles={setArticles} />
             <ul className="articles-list">
                 {articles.map((article) => {
                     const dateString = article.created_at;

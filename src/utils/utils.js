@@ -51,3 +51,16 @@ export const getArticlesByTopic = (topicName) => {
         return response.data.articles;
     });
 };
+
+export const getArticlesByQuery = (sortBy, order, topic) => {
+    let request;
+    if (topic) {
+        request = ncNewsBaseUrl.get(`/api/articles?topic=${topic}&sort_by=${sortBy}&order=${order}`);
+    } else {
+        request = ncNewsBaseUrl.get(`/api/articles?sort_by=${sortBy}&order=${order}`);
+    }
+
+    return request.then((response) => {
+        return response.data.articles;
+    });
+};

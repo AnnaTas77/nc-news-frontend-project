@@ -443,3 +443,30 @@ textarea {
 .topic-info {
     margin-left: 15px;
 }
+
+/* SORT BUTTONS */
+
+.sort-buttons-container {
+    display: flex;
+    justify-content: center;
+    margin: 18px 0 20px;
+    width: 70%;
+    max-width: 557px;
+    min-width: 350px;
+}
+
+.sort-buttons-container button {
+    margin: 15px;
+    padding: 10px;
+    background-color: #daeeff;
+    border-radius: 8px;
+    border: 1px solid #5db3ff;
+    color: #10102b;
+    font-weight: bold;
+    width: 30%;
+    font-size: 1rem;
+}
+
+.sort-buttons-container button:hover {
+    background-color: #7ac1ff;
+}
