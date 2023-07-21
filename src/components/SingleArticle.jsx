@@ -4,11 +4,14 @@ import { getArticleById, patchCommentByArticleId } from "../utils/utils";
 import CommentsList from "./CommentsList";
 import ThumbUp from "../assets/thumb-up.png";
 import ThumbDown from "../assets/thumb-down.png";
+import Error from "./Error";
 
 function SingleArticle() {
     const { article_id } = useParams();
     const [article, setArticle] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+
+    const [apiError, setApiError] = useState(null);
 
     const [userVotes, setUserVotes] = useState(0);
     const [isError, setIsError] = useState(false);
@@ -33,10 +36,14 @@ function SingleArticle() {
             .then(() => {
                 setIsLoading(false);
             })
-            .catch((err) => {
-                console.log(err);
+            .catch((error) => {
+                setApiError(error);
             });
     }, [article_id]);
+
+    if (apiError) {
+        return <Error errorStatus={apiError.response.status} errorMessage={apiError.response.data.msg} />;
+    }
 
     const handleVoteClick = (voteValue) => {
         if (!hasVoted) {
@@ -115,7 +122,9 @@ function SingleArticle() {
                         {article.comment_count + userComments} <span>Comments</span>
                     </p>
 
-                    <p className="votes">{article.votes + userVotes} Votes</p>
+                    <p className="votes">
+                        {article.votes + userVotes} <span>Votes</span>
+                    </p>
                 </div>
             </div>
             <CommentsList articleId={article_id} setUserComments={setUserComments} />

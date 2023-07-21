@@ -4,10 +4,12 @@ import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import SortArticles from "./SortArticles";
 import TopicIcon from "../assets/trending.png";
+import Error from "./Error";
 
 function ArticlesList() {
     const [articles, setArticles] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [apiError, setApiError] = useState(null);
 
     const { topic } = useParams();
 
@@ -22,8 +24,8 @@ function ArticlesList() {
                 .then(() => {
                     setIsLoading(false);
                 })
-                .catch((err) => {
-                    console.log(err);
+                .catch((error) => {
+                    setApiError(error);
                 });
         } else {
             getAllArticles()
@@ -38,6 +40,10 @@ function ArticlesList() {
                 });
         }
     }, [topic]);
+
+    if (apiError) {
+        return <Error errorStatus={apiError.response.status} errorMessage={apiError.response.data.msg} />;
+    }
 
     return isLoading ? (
         <p className="article-list-loading">Loading...</p>

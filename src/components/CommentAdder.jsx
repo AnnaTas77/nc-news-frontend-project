@@ -9,8 +9,16 @@ function CommentAdder({ articleId, setComments, setUserComments }) {
 
     const [isError, setIsError] = useState(false);
     const [hasCommented, setHasCommented] = useState(false);
+    const [commentLengthError, setCommentLengthError] = useState(false);
 
     const handleInputChange = (event) => {
+        if (event.target.value.length === 250) {
+            setCommentLengthError(true);
+            setTimeout(() => {
+                setCommentLengthError(false);
+            }, 2000);
+        }
+
         setNewComment((currentComment) => {
             return { ...currentComment, body: event.target.value };
         });
@@ -60,8 +68,13 @@ function CommentAdder({ articleId, setComments, setUserComments }) {
             <form className="comment-adder-form" onSubmit={handleFormSubmit}>
                 <label htmlFor="comment-text">
                     <span>Add a new comment</span>
-                    <span className="chars-left">{250 - newComment.body.length} characters left</span>
+                    {commentLengthError ? (
+                        <p className="comment-length-error">You have reached the 250 characters limit.</p>
+                    ) : (
+                        <span className="chars-left">{250 - newComment.body.length} characters left</span>
+                    )}
                 </label>
+
                 <textarea
                     id="comment-text"
                     type="text"
