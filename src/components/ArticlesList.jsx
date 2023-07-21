@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { getAllArticles, getArticlesByTopic } from "../utils/utils";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import SortArticles from "./SortArticles";
+import TopicIcon from "../assets/trending.png";
 
 function ArticlesList() {
     const [articles, setArticles] = useState([]);
@@ -41,6 +43,7 @@ function ArticlesList() {
         <p className="article-list-loading">Loading...</p>
     ) : (
         <main className="articles-container">
+            <SortArticles setArticles={setArticles} />
             <ul className="articles-list">
                 {articles.map((article) => {
                     const dateString = article.created_at;
@@ -54,15 +57,19 @@ function ArticlesList() {
                         <li key={article.article_id} className="article-card">
                             <Link to={`/articles/${article.article_id}`}>
                                 <div className="article-header">
+                                    <img src={TopicIcon} alt="article icon" />
                                     <h4 className="topic">{article.topic}</h4>
                                 </div>
 
                                 <div className="article-body">
-                                    <img
-                                        className="article-image"
-                                        src={article.article_img_url}
-                                        alt={`An image related to the topic of ${article.topic}`}
-                                    />
+                                    <div className="article-image-container">
+                                        <img
+                                            className="article-image"
+                                            src={article.article_img_url}
+                                            alt={`An image related to the topic of ${article.topic}`}
+                                        />
+                                    </div>
+
                                     <div>
                                         <h4 className="article-title">{article.title}</h4>
                                         <p>
