@@ -6,12 +6,14 @@ import TopicsList from "./components/TopicsList";
 import LoggedInAs from "./components/LoggedInAs";
 import Error from "./components/Error";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
     return (
         <div className="app-container">
             <NavBar />
             <LoggedInAs />
+            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<ArticlesList />} />
                 <Route path="/articles" element={<ArticlesList />} />

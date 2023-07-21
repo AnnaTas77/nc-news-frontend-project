@@ -4,7 +4,7 @@ import Logo from "../assets/robot-logo.png";
 function Header() {
     return (
         <Link
-            to={`/`}
+            to={`/articles`}
             onClick={() => {
                 window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             }}
