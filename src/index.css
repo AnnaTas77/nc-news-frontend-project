@@ -84,7 +84,7 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 
 .articles-list {
@@ -274,7 +274,7 @@ h1 {
     border: none;
     background-color: transparent;
     border-radius: 50%;
-    margin: 0 15px;
+    margin: 0 10%;
     transition: all 0.2s ease-in-out;
 }
 
@@ -288,7 +288,7 @@ h1 {
 
 .like-btn:hover,
 .dislike-btn:hover {
-    transform: scale(1.1);
+    transform: scale(1.2);
 }
 
 .like-btn:disabled {
@@ -518,6 +518,70 @@ textarea {
     font-size: 1rem;
     align-self: center;
     margin-bottom: 30px;
+    text-align: center;
+    color: #c40707;
+}
+
+/* LOGGED IN AS  */
+
+.logged-in-as {
+    display: flex;
+    width: 100%;
+    text-align: center;
+}
+
+.logged-in-as p {
+    margin-left: 20px;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+.logged-in-as span {
+    font-weight: bold;
+}
+
+/* DELETE */
+
+.single-comment-header {
+    display: flex;
+    justify-content: space-between;
+}
+.delete-btn-container {
+    max-width: 600px;
+    align-self: center;
+}
+
+.delete-btn {
+    margin: 0;
+    border: none;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+.delete-btn img {
+    width: 2.7rem;
+    border-radius: 50%;
+    margin: 0;
+    cursor: pointer;
+    filter: brightness(90%) saturate(150%);
+}
+
+.delete-btn:hover {
+    transform: scale(1.2);
+}
+
+.delete-btn:disabled {
+    border: none;
+    filter: brightness(1) saturate(0%);
+    pointer-events: none;
+}
+
+.delete-comment-error-msg {
+    font-weight: bold;
+    font-size: 0.95rem;
+    align-self: center;
+    margin: 5px 0 5px;
     text-align: center;
     color: #c40707;
 }

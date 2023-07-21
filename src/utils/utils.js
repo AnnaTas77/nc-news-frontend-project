@@ -63,3 +63,7 @@ export const getArticlesByQuery = (sortBy, order, topic) => {
         return response.data.articles;
     });
 };
+
+export const deleteCommentById = (commentId) => {
+    return ncNewsBaseUrl.delete(`/api/comments/${commentId}`);
+};

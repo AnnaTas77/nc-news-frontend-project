@@ -1,6 +1,10 @@
-import React from "react";
+import { useContext } from "react";
+import { UserContext } from "../context/User";
+import Bin from "../assets/bin_1.png";
 
-function SingleComment({ comment }) {
+function SingleComment({ comment, onDeleteHandler, isError }) {
+    const { user } = useContext(UserContext);
+
     const dateString = comment.created_at;
     const date = new Date(dateString);
     const year = date.getFullYear();
@@ -10,9 +14,20 @@ function SingleComment({ comment }) {
 
     return (
         <div className="single-comment-card">
-            <p className="comment-author-date">
-                Posted by <span>{comment.author}</span> on <span>{formattedDate}</span>
-            </p>
+            <div className="single-comment-header">
+                <p className="comment-author-date">
+                    Posted by <span>{comment.author}</span> on <span>{formattedDate}</span>
+                </p>
+
+                {user === comment.author ? (
+                    <div className="delete-btn-container">
+                        <button className="delete-btn" onClick={() => onDeleteHandler(comment.comment_id)}>
+                            <img className="bin-img" src={Bin} alt="bin icon" />
+                        </button>
+                    </div>
+                ) : null}
+            </div>
+
             <p className="comment-text">{comment.body}</p>
 
             <p className="comment-votes">
