@@ -582,3 +582,12 @@ textarea {
     text-align: center;
     color: #c40707;
 }
+
+.successfully-deleted {
+    font-weight: bold;
+    font-size: 0.95rem;
+    align-self: center;
+    margin: 15px 0 15px;
+    text-align: center;
+    color: #289548;
+}
