@@ -342,6 +342,7 @@ h1 {
 
 .comment-text {
     line-height: 1.4rem;
+    overflow-wrap: break-word;
 }
 
 .comment-votes {
@@ -425,6 +426,15 @@ textarea {
     align-self: center;
     color: #c40707;
     margin: 15px 0 5px;
+}
+
+.comment-length-error {
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 0.85rem;
+    font-weight: normal;
+    color: #c40707;
+    margin: 0;
 }
 
 /* TOPICS */

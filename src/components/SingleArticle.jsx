@@ -122,7 +122,9 @@ function SingleArticle() {
                         {article.comment_count + userComments} <span>Comments</span>
                     </p>
 
-                    <p className="votes">{article.votes + userVotes} Votes</p>
+                    <p className="votes">
+                        {article.votes + userVotes} <span>Votes</span>
+                    </p>
                 </div>
             </div>
             <CommentsList articleId={article_id} setUserComments={setUserComments} />
