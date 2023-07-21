@@ -14,6 +14,8 @@ function SingleArticle() {
     const [isError, setIsError] = useState(false);
     const [hasVoted, setHasVoted] = useState(false);
 
+    const [userComments, setUserComments] = useState(0);
+
     const dateString = article.created_at;
     const date = new Date(dateString);
     const year = date.getFullYear();
@@ -110,13 +112,13 @@ function SingleArticle() {
 
                 <div className="comments-votes-container">
                     <p>
-                        {article.comment_count} <span>Comments</span>
+                        {article.comment_count + userComments} <span>Comments</span>
                     </p>
 
                     <p className="votes">{article.votes + userVotes} Votes</p>
                 </div>
             </div>
-            <CommentsList articleId={article_id} />
+            <CommentsList articleId={article_id} setUserComments={setUserComments} />
         </article>
     );
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { postNewComment } from "../utils/utils";
 
-function CommentAdder({ articleId, setComments }) {
+function CommentAdder({ articleId, setComments, setUserComments }) {
     const [newComment, setNewComment] = useState({
         username: "grumpy19",
         body: "",
@@ -19,6 +19,10 @@ function CommentAdder({ articleId, setComments }) {
     const handleClick = () => {
         if (newComment.body) {
             setHasCommented(true);
+
+            setUserComments((currentComments) => {
+                return currentComments + 1;
+            });
         }
     };
 
@@ -37,6 +41,9 @@ function CommentAdder({ articleId, setComments }) {
             .catch((err) => {
                 console.log(err);
                 setIsError(true);
+                setUserComments((currentComments) => {
+                    return currentComments - 1;
+                });
             });
 
         setNewComment({
@@ -47,7 +54,9 @@ function CommentAdder({ articleId, setComments }) {
 
     return (
         <div className="form-container">
-            {isError ? <p className="new-comment-error-msg">Something went wrong. Please try again later.</p> : null}
+            {isError ? (
+                <p className="post-comment-error-msg">Oops! Your comment could not be added. Please try again later.</p>
+            ) : null}
             <form className="comment-adder-form" onSubmit={handleFormSubmit}>
                 <label htmlFor="comment-text">
                     <span>Add a new comment</span>
