@@ -1,4 +1,4 @@
-import Logo from "../assets/robot.png";
+import Logo from "../assets/robot-logo.png";
 
 function Header() {
     return (

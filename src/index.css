@@ -23,6 +23,7 @@ header {
     width: 60px;
     height: fit-content;
     margin-left: 15px;
+    filter: brightness(100%) saturate(200%);
 }
 
 h1 {
@@ -63,7 +64,7 @@ h1 {
 }
 
 .navbar-container a:hover {
-    background-color: #09d79cba;
+    background-color: #09d7a7e0;
 }
 
 .navbar-container a:focus {
@@ -84,7 +85,6 @@ h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* margin-top: 30px; */
 }
 
 .articles-list {
@@ -276,6 +276,7 @@ h1 {
     border-radius: 50%;
     margin: 0 10%;
     transition: all 0.2s ease-in-out;
+    box-shadow: none;
 }
 
 .like-btn img,
@@ -284,6 +285,7 @@ h1 {
     border-radius: 50%;
     margin: 0;
     cursor: pointer;
+    filter: brightness(97%) saturate(160%);
 }
 
 .like-btn:hover,
@@ -293,13 +295,13 @@ h1 {
 
 .like-btn:disabled {
     border: none;
-    filter: brightness(1) saturate(0%);
+    filter: brightness(100%) saturate(0%);
     pointer-events: none;
 }
 
 .dislike-btn:disabled {
     border: none;
-    filter: brightness(1.5) saturate(0%);
+    filter: brightness(230%) saturate(0%);
     pointer-events: none;
 }
 
@@ -404,13 +406,14 @@ textarea {
     font-weight: bold;
     background-color: #a0ecba;
     border-radius: 8px;
-    border: 1px solid #62ce82;
+    border: 1px solid #33dd76;
     margin: 17px 0 5px;
-    font-size: 0.95rem;
+    font-size: 0.97rem;
 }
 
 .add-button-container button:hover {
-    background-color: #62ce82;
+    background-color: #33dd76;
+    color: white;
 }
 
 .add-comment-btn:disabled {
@@ -508,7 +511,7 @@ textarea {
 .sort-btn {
     margin: 15px;
     padding: 10px;
-    background-color: #daeeff;
+    background-color: #c2e3ff;
     border-radius: 8px;
     border: 1px solid #5db3ff;
     color: #10102b;
@@ -538,18 +541,25 @@ textarea {
 
 .logged-in-as {
     display: flex;
-    width: 100%;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.logged-in-text {
+    margin-left: 10px;
+    font-size: 0.9rem;
     text-align: center;
 }
 
-.logged-in-as p {
-    margin-left: 20px;
-    width: 100%;
-    font-size: 0.9rem;
+.logged-in-text span {
+    font-weight: bold;
 }
 
-.logged-in-as span {
-    font-weight: bold;
+.logged-img {
+    width: 2.3rem;
+    object-fit: contain;
 }
 
 /* DELETE */
@@ -577,7 +587,7 @@ textarea {
     border-radius: 50%;
     margin: 0;
     cursor: pointer;
-    filter: brightness(90%) saturate(150%);
+    filter: brightness(100%) saturate(300%);
 }
 
 .delete-btn:hover {
@@ -607,9 +617,9 @@ textarea {
 .error-container {
     display: flex;
     flex-direction: column;
-    color: #c40707;
+    color: #f70505;
     height: 100vh;
-    width: 100%;
+    width: 90%;
     margin-top: 100px;
     text-align: center;
 }
@@ -620,5 +630,47 @@ textarea {
 }
 
 .error-text {
+    display: flex;
     font-size: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.9rem;
+}
+
+.waring-img {
+    width: 3rem;
+    filter: brightness(100%) saturate(500%);
+}
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.footer-text {
+    display: flex;
+    width: 100%;
+    font-size: 0.9rem;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.footer-text span {
+    padding: 0;
+    margin: 0;
+}
+
+.dot-image {
+    width: 2rem;
 }

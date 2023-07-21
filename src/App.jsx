@@ -5,6 +5,7 @@ import SingleArticle from "./components/SingleArticle";
 import TopicsList from "./components/TopicsList";
 import LoggedInAs from "./components/LoggedInAs";
 import Error from "./components/Error";
+import Footer from "./components/Footer";
 
 function App() {
     return (
@@ -22,6 +23,7 @@ function App() {
                     element={<Error errorStatus={404} errorMessage={"Not found: Page does not exist."} />}
                 />
             </Routes>
+            <Footer />
         </div>
     );
 }
