@@ -17,6 +17,11 @@ body {
 header {
     display: flex;
     align-items: center;
+    cursor: pointer;
+}
+
+.navbar-header-container a {
+    text-decoration: none !important;
 }
 
 .logo {
@@ -39,10 +44,14 @@ h1 {
     display: flex;
     width: 100%;
     border-bottom: 1px solid rgba(76, 20, 91, 0.22);
-    background-color: #b573d287;
+    background-color: #d2a6f0;
     align-items: center;
     justify-content: space-between;
     padding: 3px;
+    position: fixed;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px,
+        rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
 }
 
 .navbar-container {
@@ -544,7 +553,7 @@ textarea {
     width: 90%;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    margin-top: 115px;
 }
 
 .logged-in-text {
