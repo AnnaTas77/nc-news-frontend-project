@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams, useSearchParams } from "react-router-dom";
 import { getArticlesByQuery } from "../utils/utils";
 
 function SortArticles({ setArticles }) {
+    const [isError, setIsError] = useState(false);
+
     const [searchParams, setSearchParams] = useSearchParams();
 
     const { topic } = useParams();
@@ -18,6 +20,7 @@ function SortArticles({ setArticles }) {
                 })
                 .catch((err) => {
                     console.log(err);
+                    setIsError(true);
                 });
         }
     }, [searchParams, topic, setArticles]);
@@ -43,9 +46,18 @@ function SortArticles({ setArticles }) {
 
     return (
         <div className="sort-buttons-container">
-            <button onClick={() => sortBy("created_at")}>Date</button>
-            <button onClick={() => sortBy("comment_count")}>Comment Count</button>
-            <button onClick={() => sortBy("votes")}>Votes Count</button>
+            <div className="sort-buttons-wrapper">
+                <button className="sort-btn" onClick={() => sortBy("created_at")}>
+                    Date
+                </button>
+                <button className="sort-btn" onClick={() => sortBy("comment_count")}>
+                    Comment Count
+                </button>
+                <button className="sort-btn" onClick={() => sortBy("votes")}>
+                    Votes Count
+                </button>
+            </div>
+            {isError ? <p className="sort-error-msg">Something went wrong. Please try again later.</p> : null}
         </div>
     );
 }

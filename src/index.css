@@ -14,9 +14,15 @@ body {
     align-items: center;
     width: 100%;
 }
-
 header {
-    width: 12%;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 60px;
+    height: fit-content;
+    margin-left: 15px;
 }
 
 h1 {
@@ -32,13 +38,14 @@ h1 {
     display: flex;
     width: 100%;
     border-bottom: 1px solid rgba(76, 20, 91, 0.22);
-    background-color: #5800804f;
+    background-color: #b573d287;
     align-items: center;
+    justify-content: space-between;
+    padding: 3px;
 }
 
 .navbar-container {
     display: flex;
-    width: 100%;
     align-items: center;
     justify-content: flex-end;
     min-width: fit-content;
@@ -56,6 +63,10 @@ h1 {
 }
 
 .navbar-container a:hover {
+    background-color: #09d79cba;
+}
+
+.navbar-container a:focus {
     background-color: #09d79cba;
 }
 
@@ -106,6 +117,17 @@ h1 {
     color: inherit;
 }
 
+.article-header {
+    display: flex;
+}
+
+.article-header img {
+    width: 30px;
+    height: fit-content;
+    align-self: center;
+    margin-right: 7px;
+}
+
 .topic {
     text-transform: capitalize;
 }
@@ -115,11 +137,19 @@ h1 {
     flex-direction: column;
 }
 
+.article-image-container {
+    display: flex;
+    width: 100%;
+}
+
 .article-image {
     max-width: 500px;
     align-self: center;
     border-radius: 8px;
     width: 100%;
+
+    min-height: 333.5px;
+    object-fit: cover;
 }
 
 .article-title {
@@ -448,14 +478,22 @@ textarea {
 
 .sort-buttons-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin: 18px 0 20px;
     width: 70%;
-    max-width: 557px;
-    min-width: 350px;
 }
 
-.sort-buttons-container button {
+.sort-buttons-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 18px 0 20px;
+    width: 100%;
+    max-width: 557px;
+    min-width: 350px;
+    align-self: center;
+}
+
+.sort-btn {
     margin: 15px;
     padding: 10px;
     background-color: #daeeff;
@@ -467,6 +505,19 @@ textarea {
     font-size: 1rem;
 }
 
-.sort-buttons-container button:hover {
+.sort-btn:hover {
     background-color: #7ac1ff;
+}
+
+.sort-btn:focus {
+    background-color: #7ac1ff;
+}
+
+.sort-error-msg {
+    font-weight: bold;
+    font-size: 1rem;
+    align-self: center;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #c40707;
 }
