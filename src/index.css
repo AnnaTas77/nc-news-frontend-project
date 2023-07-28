@@ -71,6 +71,7 @@ h1 {
     font-weight: bold;
     color: black;
     margin: 15px 25px 15px;
+    transition: all 0.3s ease-out;
 }
 
 .navbar-container a:hover {
@@ -288,6 +289,7 @@ h1 {
     margin: 0 10%;
     transition: all 0.2s ease-in-out;
     box-shadow: none;
+    transition: all 0.3s ease-out;
 }
 
 .like-btn img,
@@ -420,6 +422,7 @@ textarea {
     border: 1px solid #33dd76;
     margin: 17px 0 5px;
     font-size: 0.97rem;
+    transition: all 0.3s ease-out;
 }
 
 .add-button-container button:hover {
@@ -529,6 +532,7 @@ textarea {
     font-weight: bold;
     width: 30%;
     font-size: 1rem;
+    transition: all 0.5s ease-out;
 }
 
 .sort-btn:hover {
@@ -590,7 +594,7 @@ textarea {
     border: none;
     background-color: transparent;
     border-radius: 50%;
-    transition: all 0.2s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .delete-btn img {
@@ -684,4 +688,91 @@ footer {
 
 .dot-image {
     width: 2rem;
+}
+
+/* HAMBURGER MENU */
+
+.hamburger-container {
+    display: none;
+    flex-direction: column;
+}
+
+.hamburger-lines {
+    display: flex;
+    flex-direction: column;
+    width: 2rem;
+    height: 2rem;
+    justify-content: space-around;
+    margin-right: 20px;
+}
+
+.hamburger-links a {
+    text-align: center;
+    padding-top: 40px;
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    width: 100%;
+}
+
+.hamburger-links.active {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: absolute;
+    background-color: #d2a6f0;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid #0000003b;
+    padding-top: 30px;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px,
+        rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+.hamburger-links.closed {
+    display: none;
+}
+
+.burger {
+    width: 2rem;
+    height: 0.25rem;
+    border-radius: 10px;
+    background-color: #00a8ff;
+    border: 1px solid #00a8ff;
+    transform-origin: 1px;
+    transition: all 0.3s linear;
+}
+
+.burger1.opened {
+    transform: rotate(43deg);
+}
+.burger2.opened {
+    opacity: 0;
+}
+.burger3.opened {
+    transform: rotate(-42deg);
+}
+
+.burger1.closed {
+    transform: rotate(0);
+}
+.burger2.closed {
+    opacity: 1;
+}
+.burger3.closed {
+    transform: rotate(0);
+}
+
+/* MEDIA QUERIES */
+
+@media only screen and (max-width: 600px) {
+    .hamburger-container {
+        display: flex;
+        z-index: 12;
+    }
+
+    .navbar-container {
+        display: none;
+    }
 }

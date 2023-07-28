@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Header from "./Header";
+import HamburgerMenu from "./HamburgerMenu";
 
 function NavBar() {
     return (
@@ -23,6 +24,7 @@ function NavBar() {
                     Topics
                 </Link>
             </nav>
+            <HamburgerMenu />
         </div>
     );
 }
