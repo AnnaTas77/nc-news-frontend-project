@@ -47,7 +47,7 @@ h1 {
     background-color: #d2a6f0;
     align-items: center;
     justify-content: space-between;
-    padding: 3px;
+    padding: 7px 0 7px 0;
     position: fixed;
     z-index: 10;
     top: 0;
