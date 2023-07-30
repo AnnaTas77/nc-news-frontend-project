@@ -42,11 +42,12 @@ The NC News Frontend Project is built using the following tech stack to deliver 
 
 4. **Explore Topics:** The app allows you to explore different topics by clicking on the "Topics" link in the navigation bar. This will display a list of available topics, and you can click on any topic to see only the articles related to that topic.
 
-## Back End Project
+## NC News Backend Project
+
+> You can find the hosted version of the NC News API Backend Project [here](https://news-backend-project.onrender.com/api).
 
 > You can find the backend repository for the NC News API [here](https://github.com/AnnaTas77/nc-news-backend-project).
 
-> You can find the hosted version of the NC News API Backend Project [here](https://news-backend-project.onrender.com/api).
 
 ## Running the Project Locally
 
