@@ -21,9 +21,10 @@ The NC News Frontend Project is built using the following tech stack to deliver 
 -   **Axios:** A powerful and widely-used HTTP client that simplifies making API requests, facilitating seamless communication with the backend.
 
 -   **CSS:** Cascading Style Sheets are used to craft visually appealing and responsive designs, ensuring an engaging user interface.
-    * __Flexbox__ is utilized to create flexible and adaptive layouts for the website. This allows components to automatically adjust and rearrange themselves based on the available screen space, ensuring consistent and visually appealing designs on various devices.
-    
-     * __Media Queries__ are employed to apply specific styles based on the user's device properties. With Media Queries, the website adapts its appearance, font sizes, margins, and other elements to provide an optimal user experience on both desktop and mobile devices.
+
+    -   **Flexbox** is utilized to create flexible and adaptive layouts for the website. This allows components to automatically adjust and rearrange themselves based on the available screen space, ensuring consistent and visually appealing designs on various devices.
+
+    -   **Media Queries** are employed to apply specific styles based on the user's device properties. With Media Queries, the website adapts its appearance, font sizes, margins, and other elements to provide an optimal user experience on both desktop and mobile devices.
 
 ## How to Use the App
 
