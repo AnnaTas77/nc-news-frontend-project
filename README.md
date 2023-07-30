@@ -8,7 +8,7 @@ Welcome to the NC News frontend project! This application is designed to provide
 
 The NC News frontend project serves as a user interface for accessing the various endpoints provided by the NC News API. It allows users to view articles, read and post comments, explore different topics, and more. The frontend is built using modern web technologies like React, providing a responsive and engaging experience to users.
 
-You can find the deployed version of the NC News frontend project [here](https://nc-news-anna.netlify.app/).
+> You can find the deployed version of the NC News frontend project [here](https://nc-news-anna.netlify.app/).
 
 ## Technologies Used
 
@@ -42,9 +42,11 @@ The NC News Frontend Project is built using the following tech stack to deliver 
 
 4. **Explore Topics:** The app allows you to explore different topics by clicking on the "Topics" link in the navigation bar. This will display a list of available topics, and you can click on any topic to see only the articles related to that topic.
 
-## Back End Repository
+## Back End Project
 
-You can find the backend repository for the NC News API [here](https://github.com/AnnaTas77/nc-news-backend-project).
+> You can find the backend repository for the NC News API [here](https://github.com/AnnaTas77/nc-news-backend-project).
+
+> You can find the hosted version of the NC News API Backend Project [here](https://news-backend-project.onrender.com/api).
 
 ## Running the Project Locally
 
