@@ -46,16 +46,25 @@ function SortArticles({ setArticles }) {
 
     return (
         <div className="sort-buttons-container">
-            <div className="sort-buttons-wrapper">
-                <button className="sort-btn" onClick={() => sortBy("created_at")}>
-                    Date
-                </button>
-                <button className="sort-btn" onClick={() => sortBy("comment_count")}>
-                    Comment Count
-                </button>
-                <button className="sort-btn" onClick={() => sortBy("votes")}>
-                    Votes Count
-                </button>
+            <div className="sort-by-dropdown">
+                <label htmlFor="touch">
+                    <span className="sort-span">Sort by</span>
+                </label>
+                <input type="checkbox" id="touch" />
+
+                <div className="slide">
+                    <div className="slide-wrapper">
+                        <button className="sort-btn" onClick={() => sortBy("created_at")}>
+                            Date
+                        </button>
+                        <button className="sort-btn" onClick={() => sortBy("comment_count")}>
+                            Comment Count
+                        </button>
+                        <button className="sort-btn" onClick={() => sortBy("votes")}>
+                            Votes Count
+                        </button>
+                    </div>
+                </div>
             </div>
             {isError ? <p className="sort-error-msg">Something went wrong. Please try again later.</p> : null}
         </div>
