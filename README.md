@@ -2,7 +2,7 @@
 
 ![NC News App Screenshot](./src/assets/NC%20News%20Screenshot.png)
 
-## Project Description
+## NC News Project Description
 
 The NC News project is a full-stack application that revolves around a custom-built backend News API, which has been designed to enable programmatic access to application data and replicate the functionalities of real-world backend services similar to Reddit.
 
