@@ -2,15 +2,21 @@
 
 ![NC News App Screenshot](./src/assets/NC%20News%20Screenshot.png)
 
-Welcome to the NC News frontend project! This application is designed to provide users with access to news articles, comments, topics, and user information through an intuitive and user-friendly interface. It interacts with the NC News API, which is a backend service built using Node.js and PostgreSQL.
-
 ## Project Description
 
-The NC News frontend project serves as a user interface for accessing the various endpoints provided by the NC News API. It allows users to view articles, read and post comments, explore different topics, and more. The frontend is built using modern web technologies like React, providing a responsive and engaging experience to users.
+The NC News project is a full-stack application that revolves around a custom-built backend News API, which has been designed to enable programmatic access to application data and replicate the functionalities of real-world backend services similar to Reddit.
+
+The NC News frontend project acts as a user-friendly interface, allowing users to access and interact with the diverse endpoints offered by the NC News API. Users can effortlessly search through the articles list, filter articles by topic, read a specific article, post comments and vote on each article.
 
 > You can find the deployed version of the NC News Frontend Project [here](https://nc-news-anna.netlify.app/).
 
-## Technologies Used
+## NC News Backend Project
+
+> You can find the hosted version of the NC News API Backend Project [here](https://news-backend-project.onrender.com/api).
+
+> You can find the backend repository for the NC News API [here](https://github.com/AnnaTas77/nc-news-backend-project).
+
+## Frontend Project Tech Stack
 
 The NC News Frontend Project is built using the following tech stack to deliver a seamless user experience:
 
@@ -41,13 +47,6 @@ The NC News Frontend Project is built using the following tech stack to deliver 
 3. **Article Details:** Clicking on an article will take you to its individual page, where you can read the full article content, see the number of votes and all the comments related to that article. You can vote on the article, add your own comment using the provided comment form or delete your comment.
 
 4. **Explore Topics:** The app allows you to explore different topics by clicking on the "Topics" link in the navigation bar. This will display a list of available topics, and you can click on any topic to see only the articles related to that topic.
-
-## NC News Backend Project
-
-> You can find the hosted version of the NC News API Backend Project [here](https://news-backend-project.onrender.com/api).
-
-> You can find the backend repository for the NC News API [here](https://github.com/AnnaTas77/nc-news-backend-project).
-
 
 ## Running the Project Locally
 
