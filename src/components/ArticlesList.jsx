@@ -46,7 +46,7 @@ function ArticlesList() {
     }
 
     return isLoading ? (
-        <p className="article-list-loading">Loading...</p>
+        <p className="article-list-loading ">Loading...</p>
     ) : (
         <main className="articles-container">
             <SortArticles setArticles={setArticles} />
